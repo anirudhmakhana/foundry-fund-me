@@ -33,4 +33,9 @@ contract FundMeTest is Test{
         assertEq(fundMe.getVersion(), 4);
     }
 
+    function testFund() public{
+        vm.expectRevert(); //hey, the next line, should revert!
+        fundMe.fund();
+    }
+
 }

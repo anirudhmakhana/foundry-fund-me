@@ -10,8 +10,8 @@ error FundMe__NotOwner();
 contract FundMe {
     using PriceConverter for uint256;
 
-    mapping(address => uint256) public addressToAmountFunded;
-    address[] public funders;
+    mapping(address => uint256) private addressToAmountFunded; //private as they are more gas efficient
+    address[] private funders; //private as they are more gas efficient
 
     // Could we make this constant?  /* hint: no! We should make it immutable! */
     address public /* immutable */ i_owner;
